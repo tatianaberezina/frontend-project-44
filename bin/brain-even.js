@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import askName from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
-const userName = askName();
+const userName = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${userName}!`);
 
 const maxNumberInGame = 100;
 
