@@ -1,28 +1,28 @@
 export const rules = 'What is the result of the expression?';
 
+const maxNumberInGame = 100;
+const getRandomNumber = () => {
+  const randomNumber = Math.round(Math.random() * maxNumberInGame);
+  return randomNumber;
+};
+
+const getRandomOperator = () => {
+  const randomNumberForOperator = Math.round(Math.random() * 2);
+  const operatorsArray = ['+', '-', '*'];
+  return operatorsArray[randomNumberForOperator];
+};
+
+const getCorrectAnswer = (number1, number2, operator) => {
+  if (operator === '+') {
+    return number1 + number2;
+  } else if (operator === '-') {
+    return number1 - number2;
+  } else {
+    return number1 * number2;
+  }
+};
+
 export const getQuestionAndCorrectAnswer = () => {
-  const maxNumberInGame = 100;
-  const getRandomNumber = () => {
-    const rundomNumber = Math.round(Math.random() * maxNumberInGame);
-    return rundomNumber;
-  };
-
-  const getRandomOperator = () => {
-    const rundomNumberForOperator = Math.round(Math.random() * 2);
-    const operatorsArray = ['+', '-', '*'];
-    return operatorsArray[rundomNumberForOperator];
-  };
-
-  const getCorrectAnswer = (number1, number2, operator) => {
-    if (operator === '+') {
-      return number1 + number2;
-    } else if (operator === '-') {
-      return number1 - number2;
-    } else {
-      return number1 * number2;
-    }
-  };
-
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operator = getRandomOperator();
