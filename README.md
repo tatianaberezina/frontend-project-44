@@ -7,3 +7,6 @@
 #### Examples step 6
 ![image](https://github.com/user-attachments/assets/31ff8a37-0c98-4638-96c3-dcac5bccbc6e)  
 ![image](https://github.com/user-attachments/assets/e40a0c69-781a-412f-a726-0952f16d9d32)
+#### Examples step 7
+![image](https://github.com/user-attachments/assets/ccbec655-ce06-4243-98b4-c0dd84c51f00)  
+![image](https://github.com/user-attachments/assets/c9303df3-4c45-4d03-adeb-0bae03cf286d)
