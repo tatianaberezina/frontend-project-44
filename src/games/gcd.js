@@ -1,8 +1,8 @@
 export const rules = 'Find the greatest common divisor of given numbers.';
 
-const maxNumberInGame = 100;
+const maxNumberInGame = 99;
 const getRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * maxNumberInGame);
+  const randomNumber = 1 + Math.round(Math.random() * maxNumberInGame);
   return randomNumber;
 };
 
