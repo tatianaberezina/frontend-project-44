@@ -10,3 +10,6 @@
 #### Examples step 7
 ![image](https://github.com/user-attachments/assets/ccbec655-ce06-4243-98b4-c0dd84c51f00)  
 ![image](https://github.com/user-attachments/assets/c9303df3-4c45-4d03-adeb-0bae03cf286d)
+#### Examples step 8
+![image](https://github.com/user-attachments/assets/e5730336-3d4f-4f2c-90c6-0c29831eb0b0)  
+![image](https://github.com/user-attachments/assets/e3d511ec-e17e-4f7f-8964-6afd38006ccb)
