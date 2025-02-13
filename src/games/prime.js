@@ -1,5 +1,4 @@
-export const rules =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const maxNumberInGame = 100;
 const getRandomNumber = () => {
@@ -14,10 +13,9 @@ const arrayOfPrimeNumbersUnderOneHundred = [
 
 export const getQuestionAndCorrectAnswer = () => {
   const randomNumber = getRandomNumber();
-  const correctAnswer =
-    arrayOfPrimeNumbersUnderOneHundred.includes(randomNumber) === true
-      ? 'yes'
-      : 'no';
+  const correctAnswer = arrayOfPrimeNumbersUnderOneHundred.includes(randomNumber) === true
+    ? 'yes'
+    : 'no';
   const question = `${randomNumber}`;
   return [question, correctAnswer];
 };

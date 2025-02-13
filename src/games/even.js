@@ -1,5 +1,4 @@
-export const rules =
-  'Answer "yes" if the number is even, otherwise answer "no".';
+export const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const maxNumberInGame = 100;
 const getRandomNumber = () => {
