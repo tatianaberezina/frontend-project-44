@@ -1,5 +1,18 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/tatianaberezina/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/tatianaberezina/frontend-project-44/actions)  
+[![Actions Status](https://github.com/tatianaberezina/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/tatianaberezina/frontend-project-44/actions)
+#### Project description
+The first Hexlet learning project containing 5 games for the user.
+#### Minimum requirements
+Need Node.js to be installed.
+#### Installation and startup instructions
+Installation steps:
+1. git clone
+2. cd ../frontend-project-44
+3. npm install
+4. npm link
+
+Startup example:
+brain-even
 #### Examples step 5
 ![image](https://github.com/user-attachments/assets/b70c7ace-00c0-48ea-afe0-325b59bda317)  
 ![image](https://github.com/user-attachments/assets/2932fc60-fee7-412f-9352-e23e7346126b)  
