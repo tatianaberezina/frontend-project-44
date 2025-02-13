@@ -13,3 +13,6 @@
 #### Examples step 8
 ![image](https://github.com/user-attachments/assets/e5730336-3d4f-4f2c-90c6-0c29831eb0b0)  
 ![image](https://github.com/user-attachments/assets/e3d511ec-e17e-4f7f-8964-6afd38006ccb)
+#### Examples step 9
+![image](https://github.com/user-attachments/assets/17f7537f-cefc-4933-a36b-037cfded3a3b)  
+![image](https://github.com/user-attachments/assets/4777ff5b-e344-459f-bd6b-210932c3aeac)
