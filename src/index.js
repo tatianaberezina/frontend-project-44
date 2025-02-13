@@ -11,8 +11,9 @@ const play = (rules, getQuestionAndCorrectAnswer) => {
   // выводим правило
   console.log(rules);
   // начинаем цикл
+  const maxNumberOfQuestions = 3;
   let numberOfCorrectAnswers = 0;
-  while (numberOfCorrectAnswers < 3) {
+  while (numberOfCorrectAnswers < maxNumberOfQuestions) {
     // получаем вопрос и ответ
     const [question, correctAnswer] = getQuestionAndCorrectAnswer();
     // выводим вопрос

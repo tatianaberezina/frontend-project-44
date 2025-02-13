@@ -7,16 +7,18 @@ const getRandomNumber = (maxNumberInGame = 100) => {
 
 export const getQuestionAndCorrectAnswer = () => {
   const number1 = getRandomNumber();
-  const stepInArithmeticProgression = 1 + getRandomNumber(9);
+  const maxStepInArithmeticProgression = 9;
+  const stepInArithmeticProgression = 1 + getRandomNumber(maxStepInArithmeticProgression);
   const arithmeticProgressionArray = [number1];
   let i = 0;
-  while (i < 9) {
+  const maxIndexOfProgressionArray = 9;
+  while (i < maxIndexOfProgressionArray) {
     const currentArrayElement = arithmeticProgressionArray[i];
     const nextArrayElement = currentArrayElement + stepInArithmeticProgression;
     i += 1;
     arithmeticProgressionArray.push(nextArrayElement);
   }
-  const emptyElementIndex = getRandomNumber(9);
+  const emptyElementIndex = getRandomNumber(maxStepInArithmeticProgression);
   const correctAnswer = String(arithmeticProgressionArray[emptyElementIndex]);
   arithmeticProgressionArray[emptyElementIndex] = '..';
   const question = arithmeticProgressionArray.join(' ');

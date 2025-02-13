@@ -7,8 +7,8 @@ const getRandomNumber = () => {
 };
 
 const getRandomOperator = () => {
-  const randomNumberForOperator = Math.round(Math.random() * 2);
   const operatorsArray = ['+', '-', '*'];
+  const randomNumberForOperator = Math.round(Math.random() * (operatorsArray.length - 1));
   return operatorsArray[randomNumberForOperator];
 };
 
