@@ -1,21 +1,21 @@
-export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+import getRandomNumber from '../utils.js';
+import play from '../index.js';
 
-const maxNumberInGame = 100;
-const getRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * maxNumberInGame);
-  return randomNumber;
-};
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const arrayOfPrimeNumbersUnderOneHundred = [
   2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
   73, 79, 83, 89, 97,
 ];
 
-export const getQuestionAndCorrectAnswer = () => {
+const isPrime = (number) => arrayOfPrimeNumbersUnderOneHundred.includes(number);
+
+const generateRound = () => {
   const randomNumber = getRandomNumber();
-  const correctAnswer = arrayOfPrimeNumbersUnderOneHundred.includes(randomNumber) === true
-    ? 'yes'
-    : 'no';
-  const question = `${randomNumber}`;
-  return [question, correctAnswer];
+  const answer = isPrime(randomNumber) ? 'yes' : 'no';
+  const question = String(randomNumber);
+  return [question, answer];
 };
+
+const startGame = () => play(description, generateRound);
+export default startGame;

@@ -1,14 +1,16 @@
-export const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+import getRandomNumber from '../utils.js';
+import play from '../index.js';
 
-const maxNumberInGame = 100;
-const getRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * maxNumberInGame);
-  return randomNumber;
-};
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const getQuestionAndCorrectAnswer = () => {
+const isEven = (number) => number % 2 === 0;
+
+const generateRound = () => {
   const randomNumber = getRandomNumber();
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  const question = `${randomNumber}`;
-  return [question, correctAnswer];
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
+  const question = String(randomNumber);
+  return [question, answer];
 };
+
+const startGame = () => play(description, generateRound);
+export default startGame;

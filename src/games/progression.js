@@ -1,26 +1,30 @@
-export const rules = 'What number is missing in the progression?';
+import getRandomNumber from '../utils.js';
+import play from '../index.js';
 
-const getRandomNumber = (maxNumberInGame = 100) => {
-  const randomNumber = Math.round(Math.random() * maxNumberInGame);
-  return randomNumber;
+const description = 'What number is missing in the progression?';
+
+const getArithmeticProgression = (startNumber, step, elementsCount = 10) => {
+  let currentNumber = startNumber;
+  const arithmeticProgressionArray = [currentNumber];
+  for (let i = 0; i < (elementsCount - 1); i += 1) {
+    arithmeticProgressionArray.push(currentNumber += step);
+  }
+
+  return arithmeticProgressionArray;
 };
 
-export const getQuestionAndCorrectAnswer = () => {
+const generateRound = () => {
   const number1 = getRandomNumber();
   const maxStepInArithmeticProgression = 9;
   const stepInArithmeticProgression = 1 + getRandomNumber(maxStepInArithmeticProgression);
-  const arithmeticProgressionArray = [number1];
-  let i = 0;
-  const maxIndexOfProgressionArray = 9;
-  while (i < maxIndexOfProgressionArray) {
-    const currentArrayElement = arithmeticProgressionArray[i];
-    const nextArrayElement = currentArrayElement + stepInArithmeticProgression;
-    i += 1;
-    arithmeticProgressionArray.push(nextArrayElement);
-  }
+  const arithmeticProgressionArray = getArithmeticProgression(number1, stepInArithmeticProgression);
+
   const emptyElementIndex = getRandomNumber(maxStepInArithmeticProgression);
-  const correctAnswer = String(arithmeticProgressionArray[emptyElementIndex]);
+  const answer = String(arithmeticProgressionArray[emptyElementIndex]);
   arithmeticProgressionArray[emptyElementIndex] = '..';
   const question = arithmeticProgressionArray.join(' ');
-  return [question, correctAnswer];
+  return [question, answer];
 };
+
+const startGame = () => play(description, generateRound);
+export default startGame;

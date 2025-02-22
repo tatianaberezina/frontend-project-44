@@ -1,12 +1,12 @@
-export const rules = 'Find the greatest common divisor of given numbers.';
+import getRandomNumber from '../utils.js';
+import play from '../index.js';
+
+const description = 'Find the greatest common divisor of given numbers.';
 
 const maxNumberInGame = 99;
-const getRandomNumber = () => {
-  const randomNumber = 1 + Math.round(Math.random() * maxNumberInGame);
-  return randomNumber;
-};
+const getRandomNumberForGame = () => 1 + getRandomNumber(maxNumberInGame);
 
-const getCorrectAnswer = (number1, number2) => {
+const getGcd = (number1, number2) => {
   let greaterNumber = 0;
   let lessNumber = 0;
   if (number1 > number2) {
@@ -25,10 +25,13 @@ const getCorrectAnswer = (number1, number2) => {
   return greaterNumber;
 };
 
-export const getQuestionAndCorrectAnswer = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
-  const correctAnswer = String(getCorrectAnswer(number1, number2));
+const generateRound = () => {
+  const number1 = getRandomNumberForGame();
+  const number2 = getRandomNumberForGame();
+  const answer = String(getGcd(number1, number2));
   const question = `${number1} ${number2}`;
-  return [question, correctAnswer];
+  return [question, answer];
 };
+
+const startGame = () => play(description, generateRound);
+export default startGame;

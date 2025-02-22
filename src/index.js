@@ -1,39 +1,29 @@
 import readlineSync from 'readline-sync';
 
-const play = (rules, getQuestionAndCorrectAnswer) => {
-  // приветствие
-
+const play = (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
-  // получаем имя игрока
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  // выводим правило
-  console.log(rules);
-  // начинаем цикл
-  const maxNumberOfQuestions = 3;
-  let numberOfCorrectAnswers = 0;
-  while (numberOfCorrectAnswers < maxNumberOfQuestions) {
-    // получаем вопрос и ответ
-    const [question, correctAnswer] = getQuestionAndCorrectAnswer();
-    // выводим вопрос
+  console.log(description);
+  const maxCountOfQuestions = 3;
+  for (
+    let countOfCorrectAnswers = 0;
+    countOfCorrectAnswers < maxCountOfQuestions;
+    countOfCorrectAnswers += 1
+  ) {
+    const [question, correctAnswer] = generateRound();
     console.log(`Question: ${question}`);
-    // просим игрока ввести ответ
     const userAnswer = readlineSync.question('Your answer: ');
-    // сравниваем ответ игрока с правильным
-    if (userAnswer === correctAnswer) {
-      numberOfCorrectAnswers += 1;
-      console.log('Correct!');
-    } else {
+    if (userAnswer !== correctAnswer) {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
     }
-    // конец цикла
+    console.log('Correct!');
   }
-  // поздравление игрока
   console.log(`Congratulations, ${userName}!`);
 };
 export default play;

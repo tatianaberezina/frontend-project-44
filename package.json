@@ -1,8 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/tatianaberezina/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/tatianaberezina/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "The first Hexlet learning project containing 5 games for the user.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

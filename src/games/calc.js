@@ -1,10 +1,7 @@
-export const rules = 'What is the result of the expression?';
+import getRandomNumber from '../utils.js';
+import play from '../index.js';
 
-const maxNumberInGame = 100;
-const getRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * maxNumberInGame);
-  return randomNumber;
-};
+const description = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
   const operatorsArray = ['+', '-', '*'];
@@ -13,20 +10,24 @@ const getRandomOperator = () => {
 };
 
 const getCorrectAnswer = (number1, number2, operator) => {
-  if (operator === '+') {
-    return number1 + number2;
+  switch (operator) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    default:
+      return number1 * number2;
   }
-  if (operator === '-') {
-    return number1 - number2;
-  }
-  return number1 * number2;
 };
 
-export const getQuestionAndCorrectAnswer = () => {
+const generateRound = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operator = getRandomOperator();
-  const correctAnswer = String(getCorrectAnswer(number1, number2, operator));
+  const answer = String(getCorrectAnswer(number1, number2, operator));
   const question = `${number1} ${operator} ${number2}`;
-  return [question, correctAnswer];
+  return [question, answer];
 };
+
+const startGame = () => play(description, generateRound);
+export default startGame;

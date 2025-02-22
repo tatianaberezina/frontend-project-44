@@ -1,8 +1,8 @@
-install: #установить зависимости
+install: 
 	npm ci
-brain-games: #запуск игры
+brain-games: 
 	node bin/brain-games.js
-publish: #публикация учебного пакета
+publish: 
 	npm publish --dry-run
-lint: #проверка кодстайла
+lint: 
 	npx eslint .
