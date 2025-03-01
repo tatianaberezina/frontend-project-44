@@ -6,10 +6,10 @@ const play = (description, generateRound) => {
   console.log(`Hello, ${userName}!`);
 
   console.log(description);
-  const maxCountOfQuestions = 3;
+  const roundsCount = 3;
   for (
     let countOfCorrectAnswers = 0;
-    countOfCorrectAnswers < maxCountOfQuestions;
+    countOfCorrectAnswers < roundsCount;
     countOfCorrectAnswers += 1
   ) {
     const [question, correctAnswer] = generateRound();

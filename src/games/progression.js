@@ -14,12 +14,11 @@ const getArithmeticProgression = (startNumber, step, elementsCount = 10) => {
 };
 
 const generateRound = () => {
-  const number1 = getRandomNumber();
-  const maxStepInArithmeticProgression = 9;
-  const stepInArithmeticProgression = 1 + getRandomNumber(maxStepInArithmeticProgression);
+  const number1 = getRandomNumber(0, 100);
+  const stepInArithmeticProgression = getRandomNumber(1, 10);
   const arithmeticProgressionArray = getArithmeticProgression(number1, stepInArithmeticProgression);
 
-  const emptyElementIndex = getRandomNumber(maxStepInArithmeticProgression);
+  const emptyElementIndex = getRandomNumber(0, 9);
   const answer = String(arithmeticProgressionArray[emptyElementIndex]);
   arithmeticProgressionArray[emptyElementIndex] = '..';
   const question = arithmeticProgressionArray.join(' ');
